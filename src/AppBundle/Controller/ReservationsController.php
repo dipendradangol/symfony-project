@@ -18,5 +18,11 @@ class ReservationsController extends Controller
         return $this->render("reservations/index.html.twig");
     }
     
-
+    /**
+     * $Route("/reservations/{id_client}", name="booking")
+     */
+    public function book(Request $request, $id_client) {
+        $data['id_client'] = $id_client;
+        return $this->render("reservations/book.html.twig", $data);
+    }
 }
