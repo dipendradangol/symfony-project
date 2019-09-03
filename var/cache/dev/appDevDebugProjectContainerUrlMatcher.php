@@ -128,9 +128,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // reservations
-        if ($pathinfo === '/reservations') {
-            return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showIndex',  '_route' => 'reservations',);
+        if (0 === strpos($pathinfo, '/reservations')) {
+            // reservations
+            if ($pathinfo === '/reservations') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::showIndex',  '_route' => 'reservations',);
+            }
+
+            // booking
+            if (preg_match('#^/reservations/(?P<id_client>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'booking')), array (  '_controller' => 'AppBundle\\Controller\\ReservationsController::book',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

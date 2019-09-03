@@ -19,7 +19,7 @@ class ReservationsController extends Controller
     }
     
     /**
-     * $Route("/reservations/{id_client}", name="booking")
+     * @Route("/reservations/{id_client}", name="booking")
      */
     public function book(Request $request, $id_client) {
         $data['id_client'] = $id_client;

@@ -40,6 +40,7 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'index_clients' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\ClientsController::showIndex',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/guests',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'reservations' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\ReservationsController::showIndex',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/reservations',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'booking' => array (  0 =>   array (    0 => 'id_client',  ),  1 =>   array (    '_controller' => 'AppBundle\\Controller\\ReservationsController::book',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'id_client',    ),    1 =>     array (      0 => 'text',      1 => '/reservations',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }
     }
